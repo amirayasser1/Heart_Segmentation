@@ -1,0 +1,129 @@
+{
+  "dataset": "COCA Cardiac CT",
+  "preprocessing": {
+    "hu_windowing": {
+      "center": 100,
+      "width": 600,
+      "range": [
+        -200,
+        400
+      ],
+      "multi_window": true,
+      "window_pairs": [
+        {
+          "center": 40,
+          "width": 400
+        },
+        {
+          "center": 100,
+          "width": 600
+        }
+      ]
+    },
+    "augmentation": {
+      "spatial": [
+        "rand_affine",
+        "rand_3d_elastic"
+      ],
+      "spatial_params": {
+        "affine_prob": 0.5,
+        "rotate_range_rad": [
+          0.0873,
+          0.0873,
+          0.1745
+        ],
+        "translate_range_voxels": [
+          5,
+          5,
+          2
+        ],
+        "scale_range": [
+          0.1,
+          0.1,
+          0.05
+        ],
+        "elastic_prob": 0.3,
+        "elastic_sigma_range": [
+          5,
+          7
+        ],
+        "elastic_magnitude_range": [
+          1,
+          2
+        ]
+      },
+      "intensity": [
+        "gaussian_noise",
+        "gaussian_smooth",
+        "intensity_scale",
+        "intensity_shift"
+      ],
+      "intensity_params": {
+        "noise_prob": 0.2,
+        "smooth_prob": 0.2,
+        "scale_prob": 0.3,
+        "shift_prob": 0.3
+      }
+    },
+    "target_spacing_mm": [
+      0.7,
+      0.7,
+      3.0
+    ]
+  },
+  "splits": {
+    "train": {
+      "n_scans": 34,
+      "percentage": "68.0"
+    },
+    "val": {
+      "n_scans": 8,
+      "percentage": "16.0"
+    },
+    "test": {
+      "n_scans": 8,
+      "percentage": "16.0"
+    }
+  },
+  "statistics": {
+    "train": {
+      "n_scans": 34,
+      "avg_heart_volume_percent": 14.093464664197283,
+      "std_heart_volume_percent": 2.8236377052407686,
+      "avg_total_voxels": 3717040.5588235296,
+      "avg_hu_mean": -248.2035387689588,
+      "avg_hu_std": 400.6598553859257,
+      "max_hu_std": 1134.4507221073263,
+      "min_hu_std": 271.9020293504682,
+      "avg_windowed_mean": 0.29478368689032164,
+      "std_windowed_mean": 0.03849143329979253,
+      "windowed_note": "After HU windowing and [0,1] normalization (actual model input)"
+    },
+    "val": {
+      "n_scans": 8,
+      "avg_heart_volume_percent": 15.263973353979562,
+      "std_heart_volume_percent": 4.615769899372852,
+      "avg_total_voxels": 3192177.25,
+      "avg_hu_mean": -226.89192190965218,
+      "avg_hu_std": 368.8089776431011,
+      "max_hu_std": 431.30526844933223,
+      "min_hu_std": 314.28732413328214,
+      "avg_windowed_mean": 0.28336782567203045,
+      "std_windowed_mean": 0.03624400153750489,
+      "windowed_note": "After HU windowing and [0,1] normalization (actual model input)"
+    },
+    "test": {
+      "n_scans": 8,
+      "avg_heart_volume_percent": 13.753779339453782,
+      "std_heart_volume_percent": 3.952650707299922,
+      "avg_total_voxels": 3559731.625,
+      "avg_hu_mean": -315.91146811344083,
+      "avg_hu_std": 501.8739907578049,
+      "max_hu_std": 1209.2312594389982,
+      "min_hu_std": 372.8327338854765,
+      "avg_windowed_mean": 0.29108360409736633,
+      "std_windowed_mean": 0.01988076686183718,
+      "windowed_note": "After HU windowing and [0,1] normalization (actual model input)"
+    }
+  }
+}
