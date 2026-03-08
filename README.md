@@ -1,5 +1,1 @@
-"# equalizer" 
-"# Humming-to-song" 
-"# Computer_vision_task1" 
-"# Computer_vision_task1" 
 "# Heart_Segmentation" 
