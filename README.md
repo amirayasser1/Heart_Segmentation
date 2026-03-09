@@ -30,7 +30,7 @@ The pipeline targets 50 randomly selected scans from the COCA dataset, generatin
 ```
 Heart_segmentation/
 ├── run_totalsegmentator.py     # Script for automated mask generation using TotalSegmentator
-├── notebooks/                  # Jupyter notebooks for preprocessing and segmentation
+├── Notebooks/                  # Jupyter notebooks for preprocessing and segmentation
 │   ├── Preprocessing.ipynb     # HU windowing, data augmentation, dataset splitting, DataLoader setup
 │   └── Segmentation.ipynb      # U-Net training, K-Fold cross-validation, evaluation 
 ├── model_outputs/              # Visualization, validation metrics, saved models
@@ -115,9 +115,9 @@ Scans are split **70% train / 15% val / 15% test** stratified by heart segmentat
 
 ## 3. Segmentation Model — `Segmentation.ipynb`
 
-A **3-D U-Net** trained in Google Colab with 5-fold cross-validation on 42 training scans, evaluated on a fixed 8-scan held-out test set.
+A **3-D U-Net** trained in Google Colab with 5-fold cross-validation on 42 training scans, evaluated on a fixed 8-scan held-out test set. and i used 30 epochs with 8 patientce.
 
-Note: is stopped training at fold 3
+Note: is stopped training at fold 3 due to limited GPU at colab
 
 ### Architecture — Why U-Net?
 
@@ -194,5 +194,6 @@ Key dependencies: `torch`, `monai`, `SimpleITK`, `totalsegmentator`, `numpy`, `s
 - [COCA Dataset](https://stanfordaimi.azurewebsites.net/datasets/e8ca74dc-8dd4-4340-815a-0266b3b9e0e4) — Coronary Calcium and Chest CT studies
 
 ---
+
 
 
