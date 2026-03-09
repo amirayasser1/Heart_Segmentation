@@ -66,7 +66,7 @@ totalsegmentator_output/
     └── <scan_id>_seg.nii.gz   # Combined heart + aorta + coronary mask
 ```
 
-> **Note:** The `coronary_arteries` task requires a TotalSegmentator license and does not support `fast=True`. It is the primary cause of long processing times (~10–20 min/scan on CPU). A CUDA-capable GPU is strongly recommended.
+> **Note:** The `coronary_arteries` task requires a TotalSegmentator license and does not support `fast=True`. It is the primary cause of long processing times. A CUDA-capable GPU is strongly recommended.
 
 ---
 
@@ -194,4 +194,5 @@ Key dependencies: `torch`, `monai`, `SimpleITK`, `totalsegmentator`, `numpy`, `s
 - [COCA Dataset](https://stanfordaimi.azurewebsites.net/datasets/e8ca74dc-8dd4-4340-815a-0266b3b9e0e4) — Coronary Calcium and Chest CT studies
 
 ---
+
 
