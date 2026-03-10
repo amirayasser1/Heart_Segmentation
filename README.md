@@ -74,6 +74,8 @@ totalsegmentator_output/
 
 A comprehensive preprocessing and data-loading pipeline for cardiac CT segmentation.
 
+<img src="preprocessed_data/summary.png" alt="summary" width="800"/>
+
 ### Pipeline Steps
 
 #### HU Windowing
@@ -194,6 +196,7 @@ Key dependencies: `torch`, `monai`, `SimpleITK`, `totalsegmentator`, `numpy`, `s
 - [COCA Dataset](https://stanfordaimi.azurewebsites.net/datasets/e8ca74dc-8dd4-4340-815a-0266b3b9e0e4) — Coronary Calcium and Chest CT studies
 
 ---
+
 
 
 
