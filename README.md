@@ -165,11 +165,11 @@ With only 50 scans, a single 70/15/15 split leaves 7–8 validation scans, givin
 | K-Fold CV mean val Dice | **0.9297 ± 0.0003** |
 | Test mean Dice (baseline) | 0.8434 ± 0.1271 |
 | Test mean Dice (+ LCC post-processing) | **0.8549 ± 0.1085** |
-| Inference speedup vs TotalSegmentator | **>14× faster** |
+| Inference speedup vs TotalSegmentator | **>10× faster** |
 
 > **LCC post-processing** (Largest Connected Component) removes small false-positive fragments, improving test Dice from 0.8434 to 0.8549 and reducing variance.
 
-> The U-Net runs **more than 14× faster** than TotalSegmentator on equivalent hardware (CPU vs CPU, fair comparison), making it suitable for large-scale deployment without requiring a GPU.
+> The U-Net runs **more than 10× faster** than TotalSegmentator on equivalent hardware (CPU vs CPU, fair comparison), making it suitable for large-scale deployment without requiring a GPU.
 
 ### K-Fold Training Curves
 
@@ -196,6 +196,7 @@ Key dependencies: `torch`, `monai`, `SimpleITK`, `totalsegmentator`, `numpy`, `s
 - [COCA Dataset](https://stanfordaimi.azurewebsites.net/datasets/e8ca74dc-8dd4-4340-815a-0266b3b9e0e4) — Coronary Calcium and Chest CT studies
 
 ---
+
 
 
 
