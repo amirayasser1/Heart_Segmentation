@@ -184,6 +184,27 @@ With only 50 scans, a single 70/15/15 split leaves 7–8 validation scans, givin
 *Predicted segmentation masks (red overlay) vs. TotalSegmentator reference labels (green, GT boundary in lime) on the held-out test set.*
 
 ---
+### Calcium-Heart Overlap (ROI Check)
+
+In addition to heart segmentation Dice, the pipeline evaluates how much coronary calcium lies inside the predicted heart region on the test set.
+
+For calcium mask $C$ and heart mask $M$:
+
+$$
+R_{\mathrm{raw}} = \frac{|C \cap M|}{|C|}
+$$
+
+$$
+R_{\mathrm{dilated}} = \frac{|C \cap \mathrm{dilate}(M)|}{|C|}
+$$
+
+Reported per scan:
+- `calcium_voxels` = $|C|$
+- `intersection_voxels_raw` = $|C \cap M|$
+- `intersection_voxels_dilated` = $|C \cap \text{dilate}(M)|$
+- `inside_ratio_raw`, `inside_ratio_dilated`
+
+Note: in the actual CAC segmentation project i will use the border of the heart as ROI localization this will be in preprocessing step. so all calcium will be included.
 
 ## Setup
 Key dependencies: `torch`, `monai`, `SimpleITK`, `totalsegmentator`, `numpy`, `scikit-learn`, `tqdm`, `matplotlib`, `nbformat`
